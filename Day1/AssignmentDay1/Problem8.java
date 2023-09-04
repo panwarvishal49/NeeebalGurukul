@@ -28,9 +28,10 @@ public class Problem8 {
 			units-=300;
 			res+=units*10;
 		}
-		double resWithSurcharge = 0.05*res +res;//Adding surcharge to the amount
-		
-		double total = 0.18*resWithSurcharge + resWithSurcharge;//Adding GST on overall amount
+		if(res>1000) {
+			res =((0.05*res)+res);//Adding surcharge to the amount if amount is greater than 1000
+		}
+		double total = (0.18*res + res);//Adding GST on overall amount
 		
 		System.out.println("Name : "+name);
 		System.out.println("Units : "+un);
